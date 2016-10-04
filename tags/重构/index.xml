@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>重构 on 蛋壳星核</title>
-    <link>https://zouyanjian.github.io/blog/tags/%E9%87%8D%E6%9E%84/</link>
+    <link>https://zouyanjian.github.io/tags/%E9%87%8D%E6%9E%84/</link>
     <description>Recent content in 重构 on 蛋壳星核</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <managingEditor>yourname@example.com (yourname)</managingEditor>
-    <webMaster>yourname@example.com (yourname)</webMaster>
-    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <managingEditor>zouyanjian110@gmail.com (zouyanjian)</managingEditor>
+    <webMaster>zouyanjian110@gmail.com (zouyanjian)</webMaster>
+    <copyright>&amp;copy; 2016 zouyanjian</copyright>
     <lastBuildDate>Sun, 11 Sep 2016 21:57:12 +0800</lastBuildDate>
-    <atom:link href="https://zouyanjian.github.io/blog/tags/%E9%87%8D%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zouyanjian.github.io/tags/%E9%87%8D%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>以管道化的方式来重构循环</title>
-      <link>https://zouyanjian.github.io/blog/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</link>
+      <link>https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</link>
       <pubDate>Sun, 11 Sep 2016 21:57:12 +0800</pubDate>
-      <author>yourname@example.com (yourname)</author>
-      <guid>https://zouyanjian.github.io/blog/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</guid>
+      <author>zouyanjian110@gmail.com (zouyanjian)</author>
+      <guid>https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</guid>
       <description>
 
 &lt;h1 id=&#34;以管道化容器的方式来重构循环&#34;&gt;以管道化容器的方式来重构循环&lt;/h1&gt;
