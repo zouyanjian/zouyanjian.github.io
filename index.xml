@@ -9,8 +9,843 @@
     <managingEditor>zouyanjian110@gmail.com (zouyanjian)</managingEditor>
     <webMaster>zouyanjian110@gmail.com (zouyanjian)</webMaster>
     <copyright>&amp;copy; 2016 zouyanjian</copyright>
-    <lastBuildDate>Sun, 11 Sep 2016 21:57:12 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Oct 2016 21:09:21 +0800</lastBuildDate>
     <atom:link href="https://zouyanjian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>plantuml cheatsheet</title>
+      <link>https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/</link>
+      <pubDate>Tue, 04 Oct 2016 21:09:21 +0800</pubDate>
+      <author>zouyanjian110@gmail.com (zouyanjian)</author>
+      <guid>https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/</guid>
+      <description>
+
+&lt;h1 id=&#34;plantuml-cheatsheet-中文版&#34;&gt;plantuml cheatsheet 中文版&lt;/h1&gt;
+
+&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+
+&lt;p&gt;plantuml是一个UML的dsl,使用文本生成UML相关图(序列图,用例图,类图,活动图,组件图,状态图,部署图,对象图),
+这份文档plantuml的cheatsheet&lt;/p&gt;
+
+&lt;h2 id=&#34;图形说明&#34;&gt;图形说明&lt;/h2&gt;
+
+&lt;p&gt;UML 可分为行为图和结构图.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;行为图&lt;/strong&gt;
+行为图用于表示系统的行为&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Diagram&lt;/th&gt;
+&lt;th&gt;PlantUML&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;用例图&lt;/td&gt;
+&lt;td&gt;Use Case&lt;/td&gt;
+&lt;td&gt;从用户角度描述系统功能，并指各功能的操作者&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;活动图&lt;/td&gt;
+&lt;td&gt;Activity&lt;/td&gt;
+&lt;td&gt;描述了业务实现用例的工作流程&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;状态图&lt;/td&gt;
+&lt;td&gt;State&lt;/td&gt;
+&lt;td&gt;是描述状态到状态控制流，常用于动态特性建模&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;顺序图&lt;/td&gt;
+&lt;td&gt;Sequence&lt;/td&gt;
+&lt;td&gt;对象之间的动态合作关系，强调对象发送消息的顺序，同时显示对象之间的交互&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;结构图&lt;/strong&gt;
+结构图用于表示系统内部静态结构和部署相关的物理元件&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Diagram&lt;/th&gt;
+&lt;th&gt;PlantUML&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;类图&lt;/td&gt;
+&lt;td&gt;Class&lt;/td&gt;
+&lt;td&gt;描述系统中类的静态结构&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;对象图&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;类图的实例&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;组件图&lt;/td&gt;
+&lt;td&gt;Component&lt;/td&gt;
+&lt;td&gt;显示系统组件间的结构关系&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;包图&lt;/td&gt;
+&lt;td&gt;Package&lt;/td&gt;
+&lt;td&gt;是包和类组成的，表示包与包之间的关系，包图描述系统的分层结构&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;配置图&lt;/td&gt;
+&lt;td&gt;Deploy&lt;/td&gt;
+&lt;td&gt;定义系统中软硬件的物理体系结构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;uml&#34;&gt;UML&lt;/h2&gt;
+
+&lt;h3 id=&#34;use-case&#34;&gt;Use Case&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;()&lt;/td&gt;
+&lt;td&gt;用例&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/usecase.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-&amp;gt;&lt;/td&gt;
+&lt;td&gt;关联&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/use_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;.&amp;gt;&lt;/td&gt;
+&lt;td&gt;Extend,Include&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/ext_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+actor Promoter
+actor Entrant
+
+Promoter --&amp;gt; (Create Event)
+Promoter -&amp;gt; (Attend Event)
+
+Entrant --&amp;gt; (Find Event)
+(Attend Event) &amp;lt;- Entrant
+
+(Attend Event) &amp;lt;.. (Create Member)  : &amp;lt;&amp;lt;include&amp;gt;&amp;gt;
+
+@enduml
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/usecase-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;activity&#34;&gt;Activity&lt;/h3&gt;
+
+&lt;p&gt;描述了业务实现用例的工作流程&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;raquo; &amp;laquo;&lt;/td&gt;
+&lt;td&gt;活动&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/activity.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;(*) -&amp;gt;&lt;/td&gt;
+&lt;td&gt;开始状态&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/initial_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-&amp;gt;(*)&lt;/td&gt;
+&lt;td&gt;结束状态&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/final_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+(*) --&amp;gt; &amp;quot;Find Event&amp;quot;
+&amp;quot;Find Event&amp;quot; -&amp;gt; &amp;quot;Attend Event&amp;quot;
+
+if &amp;quot;Capacity?&amp;quot; then
+  -&amp;gt;[ok] &amp;quot;Create Ticket&amp;quot;
+else
+  --&amp;gt;[full] if &amp;quot;Standby?&amp;quot; then
+    -&amp;gt;[ok] &amp;quot;Standby Ticket&amp;quot;
+  else
+    --&amp;gt;[no] &amp;quot;Cancel Ticket&amp;quot;
+    &amp;quot;Cancel Ticket&amp;quot; --&amp;gt; (*)
+  endif
+endif
+
+&amp;quot;Create Ticket&amp;quot; --&amp;gt; ==show==
+&amp;quot;Standby Ticket&amp;quot; --&amp;gt; ==show==
+==show== --&amp;gt; &amp;quot;Show Ticket&amp;quot;
+&amp;quot;Show Ticket&amp;quot; --&amp;gt; (*)
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/activity-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;state&#34;&gt;State&lt;/h3&gt;
+
+&lt;p&gt;状态图，表示对象的状态变化。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;[*] -&amp;gt;&lt;/td&gt;
+&lt;td&gt;开始状态&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/state_initial_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;(*) -&amp;gt;&lt;/td&gt;
+&lt;td&gt;结束状态&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/state_final_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+[*] --&amp;gt; active
+
+active -right-&amp;gt; inactive : disable
+inactive -left-&amp;gt; active  : enable
+
+inactive --&amp;gt; closed  : close
+active --&amp;gt; closed  : close
+
+closed --&amp;gt; [*]
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/state.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;sequence&#34;&gt;Sequence&lt;/h3&gt;
+
+&lt;p&gt;序列图，表示消息和顺序的对象之间的交互&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-&amp;gt;&lt;/td&gt;
+&lt;td&gt;同步消息&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/message-line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;同步应答&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/return_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-&amp;gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;异步消息&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/async_message_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;&amp;lt;-&lt;/td&gt;
+&lt;td&gt;异步应答&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/async_return_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+actor Entrant
+
+Entrant -&amp;gt; Ticket : Attend Event Request
+
+activate Ticket
+Ticket -&amp;gt; Member : Create Member Request
+
+activate Member
+Member -&amp;gt; Member : Create Member
+Ticket &amp;lt;-- Member : Create Member Response
+deactivate Member
+
+Ticket -&amp;gt; Ticket : Create Ticket
+Entrant &amp;lt;-- Ticket : Attend Event Response
+deactivate Ticket
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/sequence.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;class&#34;&gt;Class&lt;/h3&gt;
+
+&lt;p&gt;类图来表示逻辑视图。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;class&lt;/td&gt;
+&lt;td&gt;class&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/class.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;+&lt;/td&gt;
+&lt;td&gt;public&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/public_visibility.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;Private&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/private_visibility.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;#&lt;/td&gt;
+&lt;td&gt;Protected&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/protected_visibility.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;~&lt;/td&gt;
+&lt;td&gt;Package&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/package_visibility.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+class User {
+  username
+  password
+  +sign_in()
+}
+
+class Group {
+  name
+}
+
+class Member {
+  roles
+}
+
+User .. Member
+Group .. Member
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/class-d.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;object&#34;&gt;Object&lt;/h3&gt;
+
+&lt;p&gt;对象图，来表示的逻辑视图。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;object&lt;/td&gt;
+&lt;td&gt;对象&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/object.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;*-&lt;/td&gt;
+&lt;td&gt;组成&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/composition_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;o-&lt;/td&gt;
+&lt;td&gt;聚合&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/agregation_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+object User
+object Group
+object Member
+
+object Event
+object Ticket
+
+User . Group
+User o.. Member
+Group o.. Member
+
+Group o. Event
+Event o.. Ticket
+Member . Ticket
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/object-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;component&#34;&gt;Component&lt;/h3&gt;
+
+&lt;p&gt;组件图，以表示该组件的依赖关系。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;[ ]&lt;/td&gt;
+&lt;td&gt;部件&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/component.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+cloud &amp;quot;Cloud&amp;quot; {
+  package &amp;quot;Package&amp;quot; {
+    [register]
+    frame &amp;quot;frame&amp;quot; {
+      [backup]
+    }
+  }
+}
+
+node &amp;quot;Node&amp;quot; {
+  database &amp;quot;Database&amp;quot; {
+    [store]
+  }
+  folder &amp;quot;Folder&amp;quot; {
+    [File]
+  }
+}
+
+[register] .. [store] : HTTP
+[backup] .. [File] : FTP
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/component-d.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;common&#34;&gt;Common&lt;/h3&gt;
+
+&lt;p&gt;标题注释评论中常用的关键字&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;标题&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/title.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;note left :&lt;/td&gt;
+&lt;td&gt;左标记&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/note_left.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;note right :&lt;/td&gt;
+&lt;td&gt;右标记&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/note_right.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&amp;lsquo;&lt;/td&gt;
+&lt;td&gt;单行注释&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;/&amp;rsquo; &amp;lsquo;/&lt;/td&gt;
+&lt;td&gt;多行注释&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;@startuml
+
+title Title
+
+( )
+note left : Note
+
+[  ]
+note right : Note
+
+&#39; single-line comment
+
+/&#39;
+  block comment
+&#39;/
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/common.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;element&#34;&gt;Element&lt;/h3&gt;
+
+&lt;p&gt;可以使用元素，如演员或实体。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;actor&lt;/td&gt;
+&lt;td&gt;actor&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/actor.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;agent&lt;/td&gt;
+&lt;td&gt;agent&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/agent.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;usecase&lt;/td&gt;
+&lt;td&gt;usecase&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/usecase-1.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;component&lt;/td&gt;
+&lt;td&gt;component&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/component-1.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;boundary&lt;/td&gt;
+&lt;td&gt;boundary&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/boundary.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;control&lt;/td&gt;
+&lt;td&gt;control&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/control.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;entity&lt;/td&gt;
+&lt;td&gt;entity&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/entity.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;interface&lt;/td&gt;
+&lt;td&gt;interface&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/interface.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+actor actor
+:Actor alias:
+
+agent agent
+usecase usecase
+component component
+boundary boundary
+control control
+entity entity
+interface interface
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/element.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;package&#34;&gt;Package&lt;/h3&gt;
+
+&lt;p&gt;您可以使用该软件包，如作为文件夹或笔记本。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;package&lt;/td&gt;
+&lt;td&gt;package&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/actor.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;folder&lt;/td&gt;
+&lt;td&gt;folder&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/folder.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;artifact&lt;/td&gt;
+&lt;td&gt;artifact&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/artifact.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;node&lt;/td&gt;
+&lt;td&gt;node&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/node.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;frame&lt;/td&gt;
+&lt;td&gt;frame&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/frame.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;cloud&lt;/td&gt;
+&lt;td&gt;cloud&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/cloud.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;database&lt;/td&gt;
+&lt;td&gt;database&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/database.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;storage&lt;/td&gt;
+&lt;td&gt;storage&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/storage.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+
+package package
+folder folder
+artifact artifact
+node node
+frame frame
+cloud cloud
+database database
+storage storage
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/all_package.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;arrow&#34;&gt;Arrow&lt;/h3&gt;
+
+&lt;p&gt;可以指定的箭头位置和方向。&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-up-&amp;gt;&lt;/td&gt;
+&lt;td&gt;上&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/up_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-down-&amp;gt;&lt;/td&gt;
+&lt;td&gt;下&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/down_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-left-&amp;gt;&lt;/td&gt;
+&lt;td&gt;左&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/left_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;-right-&amp;gt;&lt;/td&gt;
+&lt;td&gt;右&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/right_line.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;pre&gt;&lt;code&gt;@startuml
+
+up -up-&amp;gt; right
+-right-&amp;gt; down
+-down-&amp;gt; left
+-left-&amp;gt; up
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/arrow.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;basic-widgets&#34;&gt;Basic widgets&lt;/h3&gt;
+
+&lt;p&gt;显示部件，如按钮和输入。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+salt
+
+{
+  Just plain text
+  [This is my button]
+  ()  Unchecked radio
+  (X) Checked radio
+  []  Unchecked box
+  [X] Checked box
+  &amp;quot;Enter text here   &amp;quot;
+  ^This is a droplist^
+}
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/basic_widgets.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;tree-widget&#34;&gt;Tree widget&lt;/h3&gt;
+
+&lt;p&gt;树结构部件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-plantuml&#34;&gt;@startuml
+salt
+
+{
+  {T
+   + World
+   ++ America
+   +++ Canada
+   +++ USA
+   ++++ New York
+   ++++ Boston
+   +++ Mexico
+   ++ Europe
+   +++ Italy
+   +++ Germany
+   ++++ Berlin
+   ++ Africa
+  }
+}
+
+@enduml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/tree_widget.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>以管道化的方式来重构循环</title>

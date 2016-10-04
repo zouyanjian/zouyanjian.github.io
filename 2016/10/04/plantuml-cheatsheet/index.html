@@ -55,7 +55,7 @@
     },
     "datePublished": "2016-10-04",
     "description": "plantuml 小炒",
-    "wordCount":  55 
+    "wordCount":  602 
   }
 </script>
 
@@ -109,7 +109,7 @@
           
           <li>
 
-            <a href="https://appernetic.io/app/#/about"
+            <a href="https://zouyanjian.github.io/app/#/about"
             >
 
             
@@ -120,23 +120,12 @@
           
           <li>
 
-            <a href="https://blog.appernetic.io/"
+            <a href="https://zouyanjian.github.io/"
             >
 
             
 
             Blog
-            </a>
-          </li>
-          
-          <li>
-
-            <a href="https://appernetic.io/app/#/dashboard/list/create"
-            >
-
-            
-
-            Dashboard
             </a>
           </li>
           
@@ -177,7 +166,7 @@
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
   <div class="text-center">
 
-    <h1>DRAFT :: plantuml cheatsheet
+    <h1>plantuml cheatsheet
 </h1>
 
     <div class="metas">
@@ -188,8 +177,8 @@
 
 
   <small>
-  &middot; Read in about 1 min
-  &middot; (55 Words)
+  &middot; Read in about 3 min
+  &middot; (602 Words)
 </small>
 
 
@@ -324,8 +313,716 @@
 <td>用例</td>
 <td><img src="/img/plantuml/usecase.png" alt="" /></td>
 </tr>
+
+<tr>
+<td>-&gt;</td>
+<td>关联</td>
+<td><img src="/img/plantuml/use_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>.&gt;</td>
+<td>Extend,Include</td>
+<td><img src="/img/plantuml/ext_line.png" alt="" /></td>
+</tr>
 </tbody>
 </table>
+
+<pre><code class="language-plantuml">@startuml
+
+actor Promoter
+actor Entrant
+
+Promoter --&gt; (Create Event)
+Promoter -&gt; (Attend Event)
+
+Entrant --&gt; (Find Event)
+(Attend Event) &lt;- Entrant
+
+(Attend Event) &lt;.. (Create Member)  : &lt;&lt;include&gt;&gt;
+
+@enduml
+
+</code></pre>
+
+<p><img src="/img/plantuml/usecase-1.png" alt="" /></p>
+
+<h3 id="activity">Activity</h3>
+
+<p>描述了业务实现用例的工作流程</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>&raquo; &laquo;</td>
+<td>活动</td>
+<td><img src="/img/plantuml/activity.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>(*) -&gt;</td>
+<td>开始状态</td>
+<td><img src="/img/plantuml/initial_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-&gt;(*)</td>
+<td>结束状态</td>
+<td><img src="/img/plantuml/final_line.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+(*) --&gt; &quot;Find Event&quot;
+&quot;Find Event&quot; -&gt; &quot;Attend Event&quot;
+
+if &quot;Capacity?&quot; then
+  -&gt;[ok] &quot;Create Ticket&quot;
+else
+  --&gt;[full] if &quot;Standby?&quot; then
+    -&gt;[ok] &quot;Standby Ticket&quot;
+  else
+    --&gt;[no] &quot;Cancel Ticket&quot;
+    &quot;Cancel Ticket&quot; --&gt; (*)
+  endif
+endif
+
+&quot;Create Ticket&quot; --&gt; ==show==
+&quot;Standby Ticket&quot; --&gt; ==show==
+==show== --&gt; &quot;Show Ticket&quot;
+&quot;Show Ticket&quot; --&gt; (*)
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/activity-1.png" alt="" /></p>
+
+<h3 id="state">State</h3>
+
+<p>状态图，表示对象的状态变化。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>[*] -&gt;</td>
+<td>开始状态</td>
+<td><img src="/img/plantuml/state_initial_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>(*) -&gt;</td>
+<td>结束状态</td>
+<td><img src="/img/plantuml/state_final_line.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+[*] --&gt; active
+
+active -right-&gt; inactive : disable
+inactive -left-&gt; active  : enable
+
+inactive --&gt; closed  : close
+active --&gt; closed  : close
+
+closed --&gt; [*]
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/state.png" alt="" /></p>
+
+<h3 id="sequence">Sequence</h3>
+
+<p>序列图，表示消息和顺序的对象之间的交互</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-&gt;</td>
+<td>同步消息</td>
+<td><img src="/img/plantuml/message-line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>&lt;&ndash;</td>
+<td>同步应答</td>
+<td><img src="/img/plantuml/return_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-&gt;&gt;</td>
+<td>异步消息</td>
+<td><img src="/img/plantuml/async_message_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>&lt;&lt;-</td>
+<td>异步应答</td>
+<td><img src="/img/plantuml/async_return_line.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+actor Entrant
+
+Entrant -&gt; Ticket : Attend Event Request
+
+activate Ticket
+Ticket -&gt; Member : Create Member Request
+
+activate Member
+Member -&gt; Member : Create Member
+Ticket &lt;-- Member : Create Member Response
+deactivate Member
+
+Ticket -&gt; Ticket : Create Ticket
+Entrant &lt;-- Ticket : Attend Event Response
+deactivate Ticket
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/sequence.png" alt="" /></p>
+
+<h3 id="class">Class</h3>
+
+<p>类图来表示逻辑视图。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>class</td>
+<td>class</td>
+<td><img src="/img/plantuml/class.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>+</td>
+<td>public</td>
+<td><img src="/img/plantuml/public_visibility.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-</td>
+<td>Private</td>
+<td><img src="/img/plantuml/private_visibility.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>#</td>
+<td>Protected</td>
+<td><img src="/img/plantuml/protected_visibility.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>~</td>
+<td>Package</td>
+<td><img src="/img/plantuml/package_visibility.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+class User {
+  username
+  password
+  +sign_in()
+}
+
+class Group {
+  name
+}
+
+class Member {
+  roles
+}
+
+User .. Member
+Group .. Member
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/class-d.png" alt="" /></p>
+
+<h3 id="object">Object</h3>
+
+<p>对象图，来表示的逻辑视图。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>object</td>
+<td>对象</td>
+<td><img src="/img/plantuml/object.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>*-</td>
+<td>组成</td>
+<td><img src="/img/plantuml/composition_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>o-</td>
+<td>聚合</td>
+<td><img src="/img/plantuml/agregation_line.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+object User
+object Group
+object Member
+
+object Event
+object Ticket
+
+User . Group
+User o.. Member
+Group o.. Member
+
+Group o. Event
+Event o.. Ticket
+Member . Ticket
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/object-1.png" alt="" /></p>
+
+<h3 id="component">Component</h3>
+
+<p>组件图，以表示该组件的依赖关系。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>[ ]</td>
+<td>部件</td>
+<td><img src="/img/plantuml/component.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+cloud &quot;Cloud&quot; {
+  package &quot;Package&quot; {
+    [register]
+    frame &quot;frame&quot; {
+      [backup]
+    }
+  }
+}
+
+node &quot;Node&quot; {
+  database &quot;Database&quot; {
+    [store]
+  }
+  folder &quot;Folder&quot; {
+    [File]
+  }
+}
+
+[register] .. [store] : HTTP
+[backup] .. [File] : FTP
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/component-d.png" alt="" /></p>
+
+<h3 id="common">Common</h3>
+
+<p>标题注释评论中常用的关键字</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>title</td>
+<td>标题</td>
+<td><img src="/img/plantuml/title.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>note left :</td>
+<td>左标记</td>
+<td><img src="/img/plantuml/note_left.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>note right :</td>
+<td>右标记</td>
+<td><img src="/img/plantuml/note_right.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>&lsquo;</td>
+<td>单行注释</td>
+<td></td>
+</tr>
+
+<tr>
+<td>/&rsquo; &lsquo;/</td>
+<td>多行注释</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>@startuml
+
+title Title
+
+( )
+note left : Note
+
+[  ]
+note right : Note
+
+' single-line comment
+
+/'
+  block comment
+'/
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/common.png" alt="" /></p>
+
+<h3 id="element">Element</h3>
+
+<p>可以使用元素，如演员或实体。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>actor</td>
+<td>actor</td>
+<td><img src="/img/plantuml/actor.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>agent</td>
+<td>agent</td>
+<td><img src="/img/plantuml/agent.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>usecase</td>
+<td>usecase</td>
+<td><img src="/img/plantuml/usecase-1.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>component</td>
+<td>component</td>
+<td><img src="/img/plantuml/component-1.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>boundary</td>
+<td>boundary</td>
+<td><img src="/img/plantuml/boundary.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>control</td>
+<td>control</td>
+<td><img src="/img/plantuml/control.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>entity</td>
+<td>entity</td>
+<td><img src="/img/plantuml/entity.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>interface</td>
+<td>interface</td>
+<td><img src="/img/plantuml/interface.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+actor actor
+:Actor alias:
+
+agent agent
+usecase usecase
+component component
+boundary boundary
+control control
+entity entity
+interface interface
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/element.png" alt="" /></p>
+
+<h3 id="package">Package</h3>
+
+<p>您可以使用该软件包，如作为文件夹或笔记本。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>package</td>
+<td>package</td>
+<td><img src="/img/plantuml/actor.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>folder</td>
+<td>folder</td>
+<td><img src="/img/plantuml/folder.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>artifact</td>
+<td>artifact</td>
+<td><img src="/img/plantuml/artifact.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>node</td>
+<td>node</td>
+<td><img src="/img/plantuml/node.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>frame</td>
+<td>frame</td>
+<td><img src="/img/plantuml/frame.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>cloud</td>
+<td>cloud</td>
+<td><img src="/img/plantuml/cloud.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>database</td>
+<td>database</td>
+<td><img src="/img/plantuml/database.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>storage</td>
+<td>storage</td>
+<td><img src="/img/plantuml/storage.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="language-plantuml">@startuml
+
+package package
+folder folder
+artifact artifact
+node node
+frame frame
+cloud cloud
+database database
+storage storage
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/all_package.png" alt="" /></p>
+
+<h3 id="arrow">Arrow</h3>
+
+<p>可以指定的箭头位置和方向。</p>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-up-&gt;</td>
+<td>上</td>
+<td><img src="/img/plantuml/up_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-down-&gt;</td>
+<td>下</td>
+<td><img src="/img/plantuml/down_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-left-&gt;</td>
+<td>左</td>
+<td><img src="/img/plantuml/left_line.png" alt="" /></td>
+</tr>
+
+<tr>
+<td>-right-&gt;</td>
+<td>右</td>
+<td><img src="/img/plantuml/right_line.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
+<pre><code>@startuml
+
+up -up-&gt; right
+-right-&gt; down
+-down-&gt; left
+-left-&gt; up
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/arrow.png" alt="" /></p>
+
+<h3 id="basic-widgets">Basic widgets</h3>
+
+<p>显示部件，如按钮和输入。</p>
+
+<pre><code class="language-plantuml">@startuml
+salt
+
+{
+  Just plain text
+  [This is my button]
+  ()  Unchecked radio
+  (X) Checked radio
+  []  Unchecked box
+  [X] Checked box
+  &quot;Enter text here   &quot;
+  ^This is a droplist^
+}
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/basic_widgets.png" alt="" /></p>
+
+<h3 id="tree-widget">Tree widget</h3>
+
+<p>树结构部件</p>
+
+<pre><code class="language-plantuml">@startuml
+salt
+
+{
+  {T
+   + World
+   ++ America
+   +++ Canada
+   +++ USA
+   ++++ New York
+   ++++ Boston
+   +++ Mexico
+   ++ Europe
+   +++ Italy
+   +++ Germany
+   ++++ Berlin
+   ++ Africa
+  }
+}
+
+@enduml
+</code></pre>
+
+<p><img src="/img/plantuml/tree_widget.png" alt="" /></p>
 
 </div>
 
@@ -338,7 +1035,7 @@
     
         <li class="previous">
           <a href="https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/" title="以管道化的方式来重构循环">
-            <span aria-hidden="true">&larr;</span>Previous
+            <span aria-hidden="true">&larr;</span>上一个
           </a>
         </li>
     
@@ -425,7 +1122,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
            <div class="pull-left">
-  <a class="toplink" href="#">back to top</a>
+  <a class="toplink" href="#">回到首页</a>
 </div>
 <div class="pull-right">
   
