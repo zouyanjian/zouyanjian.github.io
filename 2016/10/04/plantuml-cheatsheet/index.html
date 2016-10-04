@@ -5,31 +5,63 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>蛋壳星核 </title>
+  <title>plantuml cheatsheet  &middot; 蛋壳星核</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content="plantuml 小炒" />
 
-<meta name="keywords" content="">
+<meta name="keywords" content="工具, ">
 
 
-<meta property="og:title" content="蛋壳星核 ">
+<meta property="og:title" content="plantuml cheatsheet  &middot; 蛋壳星核 ">
 <meta property="og:site_name" content="蛋壳星核"/>
-<meta property="og:url" content="https://zouyanjian.github.io/" />
+<meta property="og:url" content="https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/" />
 <meta property="og:locale" content="zh-cn">
 
 
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="plantuml 小炒"/>
+<meta property="og:article:published_time" content="2016-10-04T21:09:21&#43;08:00" />
+<meta property="og:article:modified_time" content="2016-10-04T21:09:21&#43;08:00" />
+
+  
+    
+<meta property="og:article:tag" content="工具">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@zouyanjian" />
+<meta name="twitter:creator" content="@zouyanjian" />
+<meta name="twitter:title" content="plantuml cheatsheet" />
+<meta name="twitter:description" content="plantuml 小炒" />
+<meta name="twitter:url" content="https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/" />
+<meta name="twitter:domain" content="https://zouyanjian.github.io">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "plantuml cheatsheet",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2016-10-04",
+    "description": "plantuml 小炒",
+    "wordCount":  55 
+  }
+</script>
 
 
 
-<link href="https://zouyanjian.github.io/index.xml" rel="alternate" type="application/rss+xml" title="蛋壳星核" />
-
-<link rel="canonical" href="https://zouyanjian.github.io/" />
+<link rel="canonical" href="https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/touch-icon-144-precomposed.png">
 <link rel="icon" href="/favicon.png">
 <meta name="generator" content="Hugo 0.16" />
@@ -77,7 +109,7 @@
           
           <li>
 
-            <a href="https://zouyanjian.github.io/app/#/about"
+            <a href="https://appernetic.io/app/#/about"
             >
 
             
@@ -88,12 +120,23 @@
           
           <li>
 
-            <a href="https://zouyanjian.github.io/"
+            <a href="https://blog.appernetic.io/"
             >
 
             
 
             Blog
+            </a>
+          </li>
+          
+          <li>
+
+            <a href="https://appernetic.io/app/#/dashboard/list/create"
+            >
+
+            
+
+            Dashboard
             </a>
           </li>
           
@@ -128,63 +171,221 @@
 </header>
 
 
-  <div class="container">
-    
-    <div class="row">
-      <div class="col-sm-9">
-        
-        
-          <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div>
-  <h2><a href="https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/">以管道化的方式来重构循环</a>
-</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div class="text-center">
 
-  <div class="margin-10">
-    <small>
+    <h1>DRAFT :: plantuml cheatsheet
+</h1>
+
+    <div class="metas">
+<small>
   <i class="fa fa-calendar"></i>
-  <time datetime="2016-09-11">11 Sep, 2016</time>
+  <time datetime="2016-10-04">4 Oct, 2016</time>
 </small>
 
-    
+
+  <small>
+  &middot; Read in about 1 min
+  &middot; (55 Words)
+</small>
+
+
+<div class="margin-10">
   <i class="fa fa-tags"></i>
   
-  <a href="https://zouyanjian.github.io/tags/%E9%87%8D%E6%9E%84" class="label label-primary">重构</a>
+  <a href="https://zouyanjian.github.io/tags/%E5%B7%A5%E5%85%B7" class="label label-primary">工具</a>
   
 
+
+</div>
+<br>
+</div>
 
   </div>
 </div>
 
-    <p>
-  
-  
-    重构循环语句为管道话操作
+      <div class="content">
   
 
+<h1 id="plantuml-cheatsheet-中文版">plantuml cheatsheet 中文版</h1>
 
-</p>
+<h2 id="说明">说明</h2>
 
+<p>plantuml是一个UML的dsl,使用文本生成UML相关图(序列图,用例图,类图,活动图,组件图,状态图,部署图,对象图),
+这份文档plantuml的cheatsheet</p>
 
-    <p class="lead"><a href="https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/" class="btn btn-default">更多 &rarr;</a></p>
+<h2 id="图形说明">图形说明</h2>
 
+<p>UML 可分为行为图和结构图.</p>
 
-  </div>
+<p><strong>行为图</strong>
+行为图用于表示系统的行为</p>
+
+<table>
+<thead>
+<tr>
+<th>Diagram</th>
+<th>PlantUML</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>用例图</td>
+<td>Use Case</td>
+<td>从用户角度描述系统功能，并指各功能的操作者</td>
+</tr>
+
+<tr>
+<td>活动图</td>
+<td>Activity</td>
+<td>描述了业务实现用例的工作流程</td>
+</tr>
+
+<tr>
+<td>状态图</td>
+<td>State</td>
+<td>是描述状态到状态控制流，常用于动态特性建模</td>
+</tr>
+
+<tr>
+<td>顺序图</td>
+<td>Sequence</td>
+<td>对象之间的动态合作关系，强调对象发送消息的顺序，同时显示对象之间的交互</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>结构图</strong>
+结构图用于表示系统内部静态结构和部署相关的物理元件</p>
+
+<table>
+<thead>
+<tr>
+<th>Diagram</th>
+<th>PlantUML</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>类图</td>
+<td>Class</td>
+<td>描述系统中类的静态结构</td>
+</tr>
+
+<tr>
+<td>对象图</td>
+<td>Object</td>
+<td>类图的实例</td>
+</tr>
+
+<tr>
+<td>组件图</td>
+<td>Component</td>
+<td>显示系统组件间的结构关系</td>
+</tr>
+
+<tr>
+<td>包图</td>
+<td>Package</td>
+<td>是包和类组成的，表示包与包之间的关系，包图描述系统的分层结构</td>
+</tr>
+
+<tr>
+<td>配置图</td>
+<td>Deploy</td>
+<td>定义系统中软硬件的物理体系结构</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="uml">UML</h2>
+
+<h3 id="use-case">Use Case</h3>
+
+<table>
+<thead>
+<tr>
+<th>keyword</th>
+<th>使用</th>
+<th>图片</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>()</td>
+<td>用例</td>
+<td><img src="/img/plantuml/usecase.png" alt="" /></td>
+</tr>
+</tbody>
+</table>
+
 </div>
 
-        
-        
 
-      </div>
+      <footer>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-          <div>
+  
+    <nav><ul class="pager">
+    
+        <li class="previous">
+          <a href="https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/" title="以管道化的方式来重构循环">
+            <span aria-hidden="true">&larr;</span>Previous
+          </a>
+        </li>
+    
+
+    
+    </ul> </nav>
+  
+
+
+</div>
+
+  <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//your_disqus_shortname.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+    </div>
+    
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div>
   
 
     <div class="section">
       <header><div class="title"><b>Latest Posts</b></div></header>
       <div class="content">
         <ul>
+        
+          <li>
+          <a href="https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/">plantuml cheatsheet</a>
+          </li>
         
           <li>
           <a href="https://zouyanjian.github.io/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/">以管道化的方式来重构循环</a>
@@ -202,7 +403,7 @@
 
         <div class="content">
           <ul>
-            <li><a href="https://zouyanjian.github.iotags/%E9%87%8D%E6%9E%84">重构</a></li>
+            <li><a href="https://zouyanjian.github.iotags/%E5%B7%A5%E5%85%B7">工具</a></li><li><a href="https://zouyanjian.github.iotags/%E9%87%8D%E6%9E%84">重构</a></li>
           </ul>
         </div>
       </div>
@@ -214,19 +415,17 @@
 
 </div>
 
-        </div>
-      
-    </div>
-
+      </div>
+    
   </div>
-
+</div>
       
 <footer class="footer hidden-print">
   <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
            <div class="pull-left">
-  <a class="toplink" href="#">回到首页</a>
+  <a class="toplink" href="#">back to top</a>
 </div>
 <div class="pull-right">
   

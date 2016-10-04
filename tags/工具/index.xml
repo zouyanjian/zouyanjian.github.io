@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on 蛋壳星核</title>
+    <link>https://zouyanjian.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on 蛋壳星核</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>zouyanjian110@gmail.com (zouyanjian)</managingEditor>
+    <webMaster>zouyanjian110@gmail.com (zouyanjian)</webMaster>
+    <copyright>&amp;copy; 2016 zouyanjian</copyright>
+    <lastBuildDate>Tue, 04 Oct 2016 21:09:21 +0800</lastBuildDate>
+    <atom:link href="https://zouyanjian.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>plantuml cheatsheet</title>
+      <link>https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/</link>
+      <pubDate>Tue, 04 Oct 2016 21:09:21 +0800</pubDate>
+      <author>zouyanjian110@gmail.com (zouyanjian)</author>
+      <guid>https://zouyanjian.github.io/2016/10/04/plantuml-cheatsheet/</guid>
+      <description>
+
+&lt;h1 id=&#34;plantuml-cheatsheet-中文版&#34;&gt;plantuml cheatsheet 中文版&lt;/h1&gt;
+
+&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;
+
+&lt;p&gt;plantuml是一个UML的dsl,使用文本生成UML相关图(序列图,用例图,类图,活动图,组件图,状态图,部署图,对象图),
+这份文档plantuml的cheatsheet&lt;/p&gt;
+
+&lt;h2 id=&#34;图形说明&#34;&gt;图形说明&lt;/h2&gt;
+
+&lt;p&gt;UML 可分为行为图和结构图.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;行为图&lt;/strong&gt;
+行为图用于表示系统的行为&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Diagram&lt;/th&gt;
+&lt;th&gt;PlantUML&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;用例图&lt;/td&gt;
+&lt;td&gt;Use Case&lt;/td&gt;
+&lt;td&gt;从用户角度描述系统功能，并指各功能的操作者&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;活动图&lt;/td&gt;
+&lt;td&gt;Activity&lt;/td&gt;
+&lt;td&gt;描述了业务实现用例的工作流程&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;状态图&lt;/td&gt;
+&lt;td&gt;State&lt;/td&gt;
+&lt;td&gt;是描述状态到状态控制流，常用于动态特性建模&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;顺序图&lt;/td&gt;
+&lt;td&gt;Sequence&lt;/td&gt;
+&lt;td&gt;对象之间的动态合作关系，强调对象发送消息的顺序，同时显示对象之间的交互&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;结构图&lt;/strong&gt;
+结构图用于表示系统内部静态结构和部署相关的物理元件&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Diagram&lt;/th&gt;
+&lt;th&gt;PlantUML&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;类图&lt;/td&gt;
+&lt;td&gt;Class&lt;/td&gt;
+&lt;td&gt;描述系统中类的静态结构&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;对象图&lt;/td&gt;
+&lt;td&gt;Object&lt;/td&gt;
+&lt;td&gt;类图的实例&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;组件图&lt;/td&gt;
+&lt;td&gt;Component&lt;/td&gt;
+&lt;td&gt;显示系统组件间的结构关系&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;包图&lt;/td&gt;
+&lt;td&gt;Package&lt;/td&gt;
+&lt;td&gt;是包和类组成的，表示包与包之间的关系，包图描述系统的分层结构&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;配置图&lt;/td&gt;
+&lt;td&gt;Deploy&lt;/td&gt;
+&lt;td&gt;定义系统中软硬件的物理体系结构&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;uml&#34;&gt;UML&lt;/h2&gt;
+
+&lt;h3 id=&#34;use-case&#34;&gt;Use Case&lt;/h3&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;keyword&lt;/th&gt;
+&lt;th&gt;使用&lt;/th&gt;
+&lt;th&gt;图片&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;()&lt;/td&gt;
+&lt;td&gt;用例&lt;/td&gt;
+&lt;td&gt;&lt;img src=&#34;https://zouyanjian.github.io/img/plantuml/usecase.png&#34; alt=&#34;&#34; /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
