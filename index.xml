@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>蛋壳星核</title>
+    <link>https://zouyanjian.github.io/blog/</link>
+    <description>Recent content on 蛋壳星核</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>yourname@example.com (yourname)</managingEditor>
+    <webMaster>yourname@example.com (yourname)</webMaster>
+    <copyright>&amp;copy; 2016 Your Name</copyright>
+    <lastBuildDate>Sun, 11 Sep 2016 21:57:12 +0800</lastBuildDate>
+    <atom:link href="https://zouyanjian.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>以管道化的方式来重构循环</title>
+      <link>https://zouyanjian.github.io/blog/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</link>
+      <pubDate>Sun, 11 Sep 2016 21:57:12 +0800</pubDate>
+      <author>yourname@example.com (yourname)</author>
+      <guid>https://zouyanjian.github.io/blog/2016/09/11/%E4%BB%A5%E7%AE%A1%E9%81%93%E5%8C%96%E7%9A%84%E6%96%B9%E5%BC%8F%E6%9D%A5%E9%87%8D%E6%9E%84%E5%BE%AA%E7%8E%AF/</guid>
+      <description>
+
+&lt;h1 id=&#34;以管道化容器的方式来重构循环&#34;&gt;以管道化容器的方式来重构循环&lt;/h1&gt;
+
+&lt;p&gt;处理容器最常用的方式是循环操作,但是随着函数式语言的普及,&lt;strong&gt;Collection pipeline&lt;/strong&gt;的是一个可选的替代方案.&lt;/p&gt;
+
+&lt;p&gt;日常开发过程中处理对象列表是最普通的任务了，大部分处理这种任务都是使用循环结构，因为循环结构是我们从最初的编程课学到的最基本的控制结构，但是这种任务不是只能用循环来处理，近些年来有人会使用另外一种方法来处理，我称之为管道化容器。这种风格经常被任务是函数编程的一部分，但是我在支持lambda的oo语言中由于函数是一等公民了所以也很容易应用管道化容器的风格。&lt;/p&gt;
+
+&lt;h2 id=&#34;单循环结构管道化重构&#34;&gt;单循环结构管道化重构&lt;/h2&gt;
+
+&lt;p&gt;从一个简单的循环开始&lt;/p&gt;
+
+&lt;p&gt;Domain对象&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; @Data
+ public class Author {
+    private String name;
+    private String twitter;
+    private String company;
+
+    public Author(String name, String twitter, String company) {
+        this.name = name;
+        this.twitter = twitter;
+        this.company = company;
+    }
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;简单循环&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 
+ List&amp;lt;String&amp;gt; process(List&amp;lt;Author&amp;gt; authorList, String company) {
+        final List&amp;lt;String&amp;gt; result = Lists.newArrayList();
+
+        for (Author author : authorList) {
+            if (author.getCompany().equals(company)) {
+                String twitter = author.getTwitter();
+                if (!Strings.isNullOrEmpty(twitter)) {
+                    result.add(twitter);
+                }
+            }
+        }
+
+        return result;
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重构后版本, 使用后版本，使用filter，map和collect&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; 
+ List&amp;lt;String&amp;gt; prcess2(List&amp;lt;Author&amp;gt; authorList, String company) {
+        return authorList.stream().filter(a -&amp;gt; a.getCompany().equals(company))
+                .map(a -&amp;gt; a.getTwitter())
+                .filter(h -&amp;gt; h != null)
+                .collect(Collectors.toList());
+  }
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
